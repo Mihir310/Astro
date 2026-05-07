@@ -41,14 +41,14 @@ const calculators = [
 
 export default function Calculators() {
   return (
-    <section className="py-24 relative bg-[#253241]" id="calculators">
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+    <section className="py-12 sm:py-24 relative bg-[#253241] px-4 sm:px-0" id="calculators">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-sans text-white mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans text-white mb-3 sm:mb-4"
           >
             Know what’s lucky for you
           </motion.h2>
@@ -57,13 +57,13 @@ export default function Calculators() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-             className="text-gray-400 font-light"
+             className="text-gray-400 font-light text-sm sm:text-base"
           >
             Find what truly suits you... and keeps working for you in the long run.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 xl:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 lg:gap-4 xl:gap-6">
           {calculators.map((calc, i) => (
             <motion.div
               key={i}
@@ -71,24 +71,24 @@ export default function Calculators() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="bg-gradient-to-b from-[#FAF8F5] to-[#F1EDE4] rounded-2xl p-4 xl:p-6 flex flex-col items-center text-center shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-[#C99C3D]/20 group cursor-pointer"
+              className="bg-gradient-to-b from-[#FAF8F5] to-[#F1EDE4] rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 xl:p-6 flex flex-col items-center text-center shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-[#C99C3D]/20 group cursor-pointer"
             >
-              <div className="w-24 h-24 xl:w-32 xl:h-32 rounded-full border-4 border-white shadow-[0_4px_15px_rgba(0,0,0,0.1)] overflow-hidden mb-6 relative">
+              <div className="w-16 sm:w-20 lg:w-24 xl:w-32 h-16 sm:h-20 lg:h-24 xl:h-32 rounded-full border-3 sm:border-4 border-white shadow-[0_4px_15px_rgba(0,0,0,0.1)] overflow-hidden mb-3 sm:mb-4 lg:mb-6 relative flex-shrink-0">
                  {/* Fake outer rings to simulate the numerology wheel from screenshot */}
                  <div className="absolute inset-0 border-2 border-dashed border-gold-500/30 rounded-full animate-[spin_40s_linear_infinite]" />
-                 <img src={calc.image} alt={calc.title} className="w-full h-full object-cover p-2 rounded-full filter grayscale-[30%] opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all" />
+                 <img src={calc.image} alt={calc.title} className="w-full h-full object-cover p-1 sm:p-2 rounded-full filter grayscale-[30%] opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all" />
               </div>
               
-              <h4 className="text-navy-950 font-sans text-sm xl:text-base font-bold mb-6 flex-grow leading-tight">
+              <h4 className="text-navy-950 font-sans text-[11px] sm:text-xs lg:text-sm xl:text-base font-bold mb-2 sm:mb-3 lg:mb-6 flex-grow leading-tight">
                  {calc.title}
               </h4>
               
               {calc.link ? (
-                <a href={calc.link} className="w-full py-3 bg-gradient-to-b from-[#DAB866] to-[#C99C3D] hover:from-[#EAD592] hover:to-[#DAB866] text-navy-950 font-bold rounded-lg text-xs xl:text-[13px] shadow-[0_4px_10px_rgba(201,156,61,0.4)] transition-all uppercase tracking-wide border border-[#F3E5AB]/50 mt-auto block text-center">
+                <a href={calc.link} className="w-full py-2 sm:py-2.5 lg:py-3 bg-gradient-to-b from-[#DAB866] to-[#C99C3D] hover:from-[#EAD592] hover:to-[#DAB866] text-navy-950 font-bold rounded-lg text-[10px] sm:text-xs lg:text-[13px] shadow-[0_4px_10px_rgba(201,156,61,0.4)] transition-all uppercase tracking-wide border border-[#F3E5AB]/50 mt-auto block text-center min-h-[36px] sm:min-h-[40px] lg:min-h-[44px] flex items-center justify-center">
                   {calc.btnText}
                 </a>
               ) : (
-                <button className="w-full py-3 bg-gradient-to-b from-[#DAB866] to-[#C99C3D] hover:from-[#EAD592] hover:to-[#DAB866] text-navy-950 font-bold rounded-lg text-xs xl:text-[13px] shadow-[0_4px_10px_rgba(201,156,61,0.4)] transition-all uppercase tracking-wide border border-[#F3E5AB]/50 mt-auto">
+                <button className="w-full py-2 sm:py-2.5 lg:py-3 bg-gradient-to-b from-[#DAB866] to-[#C99C3D] hover:from-[#EAD592] hover:to-[#DAB866] text-navy-950 font-bold rounded-lg text-[10px] sm:text-xs lg:text-[13px] shadow-[0_4px_10px_rgba(201,156,61,0.4)] transition-all uppercase tracking-wide border border-[#F3E5AB]/50 mt-auto min-h-[36px] sm:min-h-[40px] lg:min-h-[44px] flex items-center justify-center">
                   {calc.btnText}
                 </button>
               )}

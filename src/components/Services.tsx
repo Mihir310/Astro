@@ -300,27 +300,27 @@ export default function Services() {
     : serviceItems.filter(s => s.category === selectedCategory);
 
   return (
-    <section className="relative py-32 overflow-hidden" id="services">
+    <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden px-4 sm:px-0" id="services">
       {/* Premium Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#FFFAF5] via-[#FDF8F3] to-[#FAF6F1]"></div>
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_50%,rgba(212,175,55,0.1),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(107,28,35,0.08),transparent_50%)]"></div>
       
       <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Premium Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16 max-w-3xl mx-auto"
+            className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto"
           >
-            <div className="inline-block mb-4">
-              <span className="text-xs uppercase tracking-[0.3em] text-gold-600 font-semibold">Premium Spiritual Services</span>
+            <div className="inline-block mb-3 sm:mb-4">
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-gold-600 font-semibold">Premium Spiritual Services</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-sans font-bold text-charcoal-900 mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-charcoal-900 mb-4 sm:mb-6 leading-tight">
               Transform Your Destiny with <span className="text-gold-600">Personalized Guidance</span>
             </h2>
-            <p className="text-lg text-gray-600 font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 font-light leading-relaxed px-2 sm:px-0">
               Expert consultation designed to align your path with cosmic energies. Each service is personalized to your unique spiritual journey.
             </p>
           </motion.div>
@@ -331,13 +331,13 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex flex-wrap justify-center gap-3 mb-16"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 sm:mb-16 px-2 sm:px-0"
           >
             {categoryTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setSelectedCategory(tab.id)}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                   selectedCategory === tab.id
                     ? 'bg-gold-600 text-white shadow-lg shadow-gold-600/30'
                     : 'bg-white text-gray-700 border border-gray-200 hover:border-gold-300 hover:shadow-md'
@@ -349,7 +349,7 @@ export default function Services() {
           </motion.div>
 
           {/* Service Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {filteredServices.map((service, index) => {
               const IconComponent = getServiceIcon(service.id);
               
@@ -370,7 +370,7 @@ export default function Services() {
 
 
                     {/* Image Section */}
-                    <div className="relative h-48 overflow-hidden bg-gray-200">
+                    <div className="relative h-40 sm:h-48 overflow-hidden bg-gray-200">
                       <img
                         src={service.image}
                         alt={service.title}
@@ -391,25 +391,25 @@ export default function Services() {
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                    <div className="p-4 sm:p-6 flex flex-col h-[calc(100%-10rem)] sm:h-[calc(100%-12rem)]">
                       {/* Title */}
-                      <h3 className="text-xl font-sans font-semibold text-charcoal-900 mb-3 group-hover:text-gold-600 transition-colors leading-snug">
+                      <h3 className="text-base sm:text-lg md:text-xl font-sans font-semibold text-charcoal-900 mb-2 sm:mb-3 group-hover:text-gold-600 transition-colors leading-snug">
                         {service.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm text-gray-600 mb-4 flex-grow leading-relaxed line-clamp-2">
+                      <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 flex-grow leading-relaxed line-clamp-2">
                         {service.description}
                       </p>
 
                       {/* Divider */}
-                      <div className="h-px bg-gradient-to-r from-gray-200 via-gold-300/30 to-gray-200 mb-4"></div>
+                      <div className="h-px bg-gradient-to-r from-gray-200 via-gold-300/30 to-gray-200 mb-2 sm:mb-4"></div>
 
                       {/* Price Section */}
-                      <div className="mb-5">
+                      <div className="mb-3 sm:mb-5">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-sm text-gray-600">Rs.</span>
-                          <span className="text-2xl font-bold text-charcoal-900">
+                          <span className="text-xs sm:text-sm text-gray-600">Rs.</span>
+                          <span className="text-lg sm:text-2xl font-bold text-charcoal-900">
                             {service.price.replace('Rs. ', '').replace('.00', '')}
                           </span>
                         </div>
@@ -419,7 +419,7 @@ export default function Services() {
                       <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold py-3 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/30 relative overflow-hidden group/btn"
+                        className="w-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold py-2.5 sm:py-3 rounded-2xl text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/30 relative overflow-hidden group/btn min-h-[44px] sm:min-h-[48px] flex items-center justify-center"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-gold-600 to-gold-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                         <span className="relative">Book Consultation</span>
@@ -437,19 +437,19 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="mt-20 pt-12 border-t border-gray-200/50 flex flex-col sm:flex-row justify-around items-center gap-8"
+            className="mt-12 sm:mt-20 pt-8 sm:pt-12 border-t border-gray-200/50 flex flex-col sm:flex-row justify-around items-center gap-6 sm:gap-8"
           >
             <div className="text-center">
-              <div className="text-2xl font-bold text-charcoal-900 mb-1">5000+</div>
-              <p className="text-sm text-gray-600">Satisfied Clients</p>
+              <div className="text-lg sm:text-2xl font-bold text-charcoal-900 mb-1">5000+</div>
+              <p className="text-xs sm:text-sm text-gray-600">Satisfied Clients</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-charcoal-900 mb-1">20+ Years</div>
-              <p className="text-sm text-gray-600">Experience & Expertise</p>
+              <div className="text-lg sm:text-2xl font-bold text-charcoal-900 mb-1">20+ Years</div>
+              <p className="text-xs sm:text-sm text-gray-600">Experience & Expertise</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-charcoal-900 mb-1">100%</div>
-              <p className="text-sm text-gray-600">Personalized Approach</p>
+              <div className="text-lg sm:text-2xl font-bold text-charcoal-900 mb-1">100%</div>
+              <p className="text-xs sm:text-sm text-gray-600">Personalized Approach</p>
             </div>
           </motion.div>
         </div>

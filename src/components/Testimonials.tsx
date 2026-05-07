@@ -21,17 +21,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 relative bg-white border-y border-[#C99C3D]/10" id="testimonials">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row gap-12 justify-between items-end mb-16">
+    <section className="py-12 sm:py-24 relative bg-white border-y border-[#C99C3D]/10 px-4 sm:px-0" id="testimonials">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row gap-8 sm:gap-12 justify-between items-start md:items-end mb-12 sm:mb-16">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="max-w-xl"
           >
-            <h2 className="text-sm text-gold-600 uppercase tracking-[0.2em] mb-4">Client Experiences</h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-[#2C241B] leading-tight">
+            <h2 className="text-[10px] sm:text-sm text-gold-600 uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4">Client Experiences</h2>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#2C241B] leading-tight">
               Words from the <br/>
               <span className="italic text-[#8C735D]">Constellation</span>
             </h3>
@@ -41,18 +41,18 @@ export default function Testimonials() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex gap-2 pb-2"
+            className="flex gap-2 items-center"
           >
              <div className="flex text-gold-600">
                {[...Array(5)].map((_, i) => (
-                 <Star key={i} className="w-5 h-5 fill-current" />
+                 <Star key={i} className="w-4 sm:w-5 h-4 sm:h-5 fill-current" />
                ))}
              </div>
-             <span className="text-[#2C241B] ml-2">5.0 Average Rating</span>
+             <span className="text-[#2C241B] ml-2 text-xs sm:text-sm whitespace-nowrap">5.0 Average Rating</span>
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={i}
@@ -60,15 +60,15 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#C99C3D]/10 relative"
+              className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#FAF8F5] border border-[#C99C3D]/10 relative flex flex-col"
             >
-              <div className="absolute top-8 right-8 text-gold-500/20 font-serif text-6xl leading-none">"</div>
-              <p className="text-[#5C4B3D] font-light leading-relaxed mb-8 relative z-10 text-justify">
+              <div className="absolute top-4 sm:top-8 right-4 sm:right-8 text-gold-500/20 font-serif text-4xl sm:text-6xl leading-none">"</div>
+              <p className="text-[#5C4B3D] font-light leading-relaxed mb-6 sm:mb-8 relative z-10 text-justify text-sm sm:text-base flex-grow">
                 "{testimonial.content}"
               </p>
               <div>
-                <h4 className="text-[#2C241B] font-medium mb-1">{testimonial.name}</h4>
-                <p className="text-sm text-[#8C735D]">{testimonial.role}</p>
+                <h4 className="text-[#2C241B] font-medium mb-1 text-sm sm:text-base">{testimonial.name}</h4>
+                <p className="text-xs sm:text-sm text-[#8C735D]">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}

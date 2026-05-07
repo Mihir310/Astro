@@ -48,29 +48,29 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-20 md:py-32 bg-gradient-to-b from-[#FBF9F6] to-white overflow-hidden">
+    <section className="relative py-12 sm:py-20 md:py-32 bg-gradient-to-b from-[#FBF9F6] to-white overflow-hidden px-4 sm:px-0">
       {/* Decorative Background */}
-      <div className="absolute top-0 right-1/3 w-96 h-96 bg-saffron-300/8 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-red-400/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-1/3 w-64 sm:w-96 h-64 sm:h-96 bg-saffron-300/8 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-64 sm:w-96 h-64 sm:h-96 bg-red-400/8 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
-          <p className="text-sm text-gold-600 uppercase tracking-[0.15em] font-semibold mb-4">Why Our Clients Trust Us</p>
-          <h2 className="text-5xl md:text-6xl font-serif text-[#2C241B] mb-8">Premium Benefits & Features</h2>
-          <p className="text-lg text-[#5C4B3D] max-w-2xl mx-auto">
+          <p className="text-[10px] sm:text-sm text-gold-600 uppercase tracking-[0.12em] sm:tracking-[0.15em] font-semibold mb-3 sm:mb-4">Why Our Clients Trust Us</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-[#2C241B] mb-4 sm:mb-8">Premium Benefits & Features</h2>
+          <p className="text-sm sm:text-base md:text-lg text-[#5C4B3D] max-w-2xl mx-auto px-2 sm:px-0">
             Experience the transformative power of authentic spiritual guidance combined with modern wellness practices, delivered by a trusted expert with decades of excellence.
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -84,27 +84,27 @@ export default function WhyChooseUs() {
                 className="group"
               >
                 {/* Card */}
-                <div className="relative h-full bg-white rounded-2xl p-8 border border-gold-200/50 shadow-lg hover:shadow-2xl hover:shadow-gold-500/20 transition-all duration-300 overflow-hidden">
+                <div className="relative h-full bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gold-200/50 shadow-lg hover:shadow-2xl hover:shadow-gold-500/20 transition-all duration-300 overflow-hidden">
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
 
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className="mb-6 relative inline-block">
+                    <div className="mb-4 sm:mb-6 relative inline-block">
                       <div className={`absolute -inset-3 bg-gradient-to-br ${feature.color} rounded-full opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300`} />
-                      <div className={`relative p-4 bg-gradient-to-br ${feature.color} rounded-full`}>
-                        <Icon className="w-6 h-6 text-white" />
+                      <div className={`relative p-3 sm:p-4 bg-gradient-to-br ${feature.color} rounded-full`}>
+                        <Icon className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                       </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-serif text-[#2C241B] mb-4">
+                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-serif text-[#2C241B] mb-2 sm:mb-4">
                       {feature.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[#5C4B3D] leading-relaxed">
+                    <p className="text-[#5C4B3D] leading-relaxed text-xs sm:text-sm md:text-base">
                       {feature.description}
                     </p>
                   </div>
@@ -123,25 +123,25 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-12 sm:mt-20 text-center"
         >
-          <div className="bg-gradient-to-r from-red-50 via-orange-50 to-gold-50 rounded-2xl border border-gold-200/50 p-12">
-            <h3 className="text-3xl md:text-4xl font-serif text-[#2C241B] mb-6">
+          <div className="bg-gradient-to-r from-red-50 via-orange-50 to-gold-50 rounded-xl sm:rounded-2xl border border-gold-200/50 p-6 sm:p-8 md:p-12">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#2C241B] mb-4 sm:mb-6">
               Ready for Your Spiritual Journey?
             </h3>
-            <p className="text-lg text-[#5C4B3D] mb-10 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-[#5C4B3D] mb-6 sm:mb-10 max-w-2xl mx-auto px-2 sm:px-0">
               Take the first step toward transformation. Book your personalized consultation with Dr. Geeta Joshi today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center">
               <a
                 href="#/consultation"
-                className="px-10 py-4 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-red-500/40 transform hover:scale-105"
+                className="px-6 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-red-500/40 transform hover:scale-105 text-sm sm:text-base min-h-[44px] sm:min-h-[48px] flex items-center justify-center"
               >
                 Book Consultation
               </a>
               <a
                 href="#/services"
-                className="px-10 py-4 bg-transparent border-2 border-gold-500 hover:bg-gold-500/10 text-[#2C241B] font-semibold rounded-full transition-all duration-300"
+                className="px-6 sm:px-10 py-3 sm:py-4 bg-transparent border-2 border-gold-500 hover:bg-gold-500/10 text-[#2C241B] font-semibold rounded-full transition-all duration-300 text-sm sm:text-base min-h-[44px] sm:min-h-[48px] flex items-center justify-center"
               >
                 View All Services
               </a>
