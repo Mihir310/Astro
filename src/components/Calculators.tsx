@@ -63,7 +63,7 @@ export default function Calculators() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 lg:gap-4 xl:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 lg:gap-4 xl:gap-6 mobile-card-grid">
           {calculators.map((calc, i) => (
             <motion.div
               key={i}

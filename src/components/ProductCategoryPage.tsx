@@ -246,7 +246,7 @@ export default function ProductCategoryPage({
           </div>
 
           {visibleProducts.length > 0 ? (
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 lg:gap-8 mobile-card-grid">
               {visibleProducts.map((product, index) => (
                 <motion.article
                   key={`${product.name}-${index}`}
@@ -256,7 +256,7 @@ export default function ProductCategoryPage({
                   transition={{ delay: Math.min(index * 0.05, 0.35) }}
                   className="group"
                 >
-                  <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 bg-[#FAF8F5] border border-[#C99C3D]/20">
+                  <div className="relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden mb-2 sm:mb-5 bg-[#FAF8F5] border border-[#C99C3D]/20">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -264,22 +264,22 @@ export default function ProductCategoryPage({
                       className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
                     />
                     {product.tag && (
-                      <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md border border-[#C99C3D]/20 px-3 py-1 rounded-full text-[10px] uppercase tracking-widest text-gold-600">
+                      <span className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-white/90 backdrop-blur-md border border-[#C99C3D]/20 px-2 sm:px-3 py-1 rounded-full text-[8px] sm:text-[10px] uppercase tracking-widest text-gold-600">
                         {product.tag}
                       </span>
                     )}
-                    <button className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-gold-500 text-[#2C241B] flex items-center justify-center shadow-lg translate-y-14 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gold-400" aria-label={`Add ${product.name} to cart`}>
-                      <ShoppingBag className="w-5 h-5" />
+                    <button className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 w-9 sm:w-12 h-9 sm:h-12 rounded-full bg-gold-500 text-[#2C241B] flex items-center justify-center shadow-lg translate-y-0 opacity-100 sm:translate-y-14 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 transition-all duration-300 hover:bg-gold-400" aria-label={`Add ${product.name} to cart`}>
+                      <ShoppingBag className="w-4 sm:w-5 h-4 sm:h-5" />
                     </button>
                   </div>
 
-                  <span className="text-xs text-orange-600 uppercase tracking-widest block mb-2">
+                  <span className="text-[9px] sm:text-xs text-orange-600 uppercase tracking-widest block mb-1 sm:mb-2 truncate text-center sm:text-left">
                     {product.collectionTitle ? `${product.collectionTitle} / ${product.category}` : product.category}
                   </span>
-                  <h3 className="text-xl font-serif text-[#2C241B] leading-snug group-hover:text-gold-600 transition-colors min-h-[3rem]">
+                  <h3 className="text-xs sm:text-xl font-serif text-[#2C241B] leading-snug group-hover:text-gold-600 transition-colors min-h-[2rem] sm:min-h-[3rem] line-clamp-2 text-center sm:text-left">
                     {product.name}
                   </h3>
-                  <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
+                  <div className="mt-2 sm:mt-3 flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-xs sm:text-sm">
                     {product.oldPrice && <span className="text-[#AEB8C2] line-through">{product.oldPrice}</span>}
                     <span className="text-red-600 font-semibold">{product.price}</span>
                   </div>

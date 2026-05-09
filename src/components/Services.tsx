@@ -349,7 +349,7 @@ export default function Services() {
           </motion.div>
 
           {/* Service Cards Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8 mobile-card-grid">
             {filteredServices.map((service, index) => {
               const IconComponent = getServiceIcon(service.id);
               
@@ -364,13 +364,13 @@ export default function Services() {
                   className="group cursor-pointer h-full"
                 >
                   {/* Premium Card */}
-                  <div className="relative h-full bg-white/60 backdrop-blur-md rounded-3xl border border-white/80 hover:border-gold-400/60 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-gold-500/20 hover:-translate-y-2">
+                  <div className="relative h-full bg-white/60 backdrop-blur-md rounded-xl sm:rounded-3xl border border-white/80 hover:border-gold-400/60 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-gold-500/20 hover:-translate-y-2">
                     
                     {/* Featured Badge */}
 
 
                     {/* Image Section */}
-                    <div className="relative h-40 sm:h-48 overflow-hidden bg-gray-200">
+                    <div className="relative h-32 sm:h-48 overflow-hidden bg-gray-200">
                       <img
                         src={service.image}
                         alt={service.title}
@@ -380,25 +380,25 @@ export default function Services() {
                       <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/20 to-transparent"></div>
                       
                       {/* Icon Badge on Image */}
-                      <div className="absolute bottom-4 left-4">
+                      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4">
                         <motion.div
                           whileHover={{ scale: 1.1 }}
-                          className="bg-white/20 backdrop-blur-md p-3 rounded-2xl border border-white/30 group-hover:bg-gold-500/30 group-hover:border-gold-400/60 transition-all duration-300"
+                          className="bg-white/20 backdrop-blur-md p-2 sm:p-3 rounded-xl sm:rounded-2xl border border-white/30 group-hover:bg-gold-500/30 group-hover:border-gold-400/60 transition-all duration-300"
                         >
-                          <IconComponent className="h-6 w-6 text-white" />
+                          <IconComponent className="h-4 sm:h-6 w-4 sm:w-6 text-white" />
                         </motion.div>
                       </div>
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-4 sm:p-6 flex flex-col h-[calc(100%-10rem)] sm:h-[calc(100%-12rem)]">
+                    <div className="p-3 sm:p-6 flex flex-col h-[calc(100%-8rem)] sm:h-[calc(100%-12rem)] text-center sm:text-left">
                       {/* Title */}
-                      <h3 className="text-base sm:text-lg md:text-xl font-sans font-semibold text-charcoal-900 mb-2 sm:mb-3 group-hover:text-gold-600 transition-colors leading-snug">
+                      <h3 className="text-xs sm:text-lg md:text-xl font-sans font-semibold text-charcoal-900 mb-1.5 sm:mb-3 group-hover:text-gold-600 transition-colors leading-snug line-clamp-2 min-h-[2rem] sm:min-h-0">
                         {service.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 flex-grow leading-relaxed line-clamp-2">
+                      <p className="text-[11px] sm:text-sm text-gray-600 mb-2 sm:mb-4 flex-grow leading-snug sm:leading-relaxed line-clamp-2">
                         {service.description}
                       </p>
 
@@ -406,10 +406,10 @@ export default function Services() {
                       <div className="h-px bg-gradient-to-r from-gray-200 via-gold-300/30 to-gray-200 mb-2 sm:mb-4"></div>
 
                       {/* Price Section */}
-                      <div className="mb-3 sm:mb-5">
-                        <div className="flex items-baseline gap-1">
+                      <div className="mb-2 sm:mb-5">
+                        <div className="flex items-baseline justify-center sm:justify-start gap-1">
                           <span className="text-xs sm:text-sm text-gray-600">Rs.</span>
-                          <span className="text-lg sm:text-2xl font-bold text-charcoal-900">
+                          <span className="text-base sm:text-2xl font-bold text-charcoal-900">
                             {service.price.replace('Rs. ', '').replace('.00', '')}
                           </span>
                         </div>
@@ -419,7 +419,7 @@ export default function Services() {
                       <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold py-2.5 sm:py-3 rounded-2xl text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/30 relative overflow-hidden group/btn min-h-[44px] sm:min-h-[48px] flex items-center justify-center"
+                        className="w-full bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold py-2 sm:py-3 rounded-xl sm:rounded-2xl text-[11px] sm:text-base transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/30 relative overflow-hidden group/btn min-h-[40px] sm:min-h-[48px] flex items-center justify-center"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-gold-600 to-gold-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                         <span className="relative">Book Consultation</span>

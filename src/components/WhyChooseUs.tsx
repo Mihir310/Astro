@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8 mobile-card-grid">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -84,7 +84,7 @@ export default function WhyChooseUs() {
                 className="group"
               >
                 {/* Card */}
-                <div className="relative h-full bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gold-200/50 shadow-lg hover:shadow-2xl hover:shadow-gold-500/20 transition-all duration-300 overflow-hidden">
+                <div className="relative h-full bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 border border-gold-200/50 shadow-lg hover:shadow-2xl hover:shadow-gold-500/20 transition-all duration-300 overflow-hidden">
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
 
@@ -99,12 +99,12 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-serif text-[#2C241B] mb-2 sm:mb-4">
+                    <h3 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-serif text-[#2C241B] mb-2 sm:mb-4 leading-tight">
                       {feature.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[#5C4B3D] leading-relaxed text-xs sm:text-sm md:text-base">
+                    <p className="text-[#5C4B3D] leading-snug sm:leading-relaxed text-[11px] sm:text-sm md:text-base line-clamp-4 sm:line-clamp-none">
                       {feature.description}
                     </p>
                   </div>

@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
 @theme {
   /* Premium Luxury Color Palette */
@@ -893,6 +893,16 @@ html {
   .grid {
     gap: 1rem;
   }
+
+  .mobile-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .mobile-card-grid > * {
+    min-width: 0;
+  }
 }
 
 /* Mobile Flex Layouts */
@@ -924,7 +934,7 @@ html {
     border-radius: 1rem;
   }
 
-  .rounded-[3rem] {
+  .rounded-\[3rem\] {
     border-radius: 1.5rem;
   }
 }

@@ -84,7 +84,7 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8 mobile-card-grid">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -98,31 +98,31 @@ export default function ServicesSection() {
                 className="group relative"
               >
                 {/* Glassmorphism Card */}
-                <div className="relative h-full bg-white/40 backdrop-blur-xl border border-white/60 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden transition-all duration-300 shadow-lg">
+                <div className="relative h-full bg-white/40 backdrop-blur-xl border border-white/60 rounded-xl sm:rounded-2xl p-3 sm:p-6 md:p-8 overflow-hidden transition-all duration-300 shadow-lg">
                   {/* Color Background */}
                   <div className={`absolute inset-0 ${service.color} opacity-0`} />
 
                   {/* Content */}
-                  <div className="relative z-10 flex flex-col h-full">
+                  <div className="relative z-10 flex h-full min-h-[230px] flex-col sm:min-h-[240px]">
                     {/* Button with Icon and Title */}
-                    <div className="mb-4 sm:mb-6 relative inline-block">
-                      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-4 bg-white rounded-full shadow-lg">
+                    <div className="relative mb-3 flex min-h-[90px] items-start sm:mb-6 sm:min-h-[72px]">
+                      <div className="flex min-h-[82px] w-full flex-col items-center justify-center gap-1.5 rounded-xl bg-white px-2 py-2 text-center shadow-lg sm:min-h-[64px] sm:flex-row sm:gap-3 sm:rounded-full sm:px-6 sm:py-4 sm:text-left">
                         <Icon className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-black flex-shrink-0" />
-                        <h3 className="text-xs sm:text-base md:text-lg font-sans text-black whitespace-nowrap">
+                        <h3 className="flex min-h-[2rem] items-center text-center text-[11px] font-bold leading-tight text-black sm:min-h-0 sm:text-left sm:text-base md:text-lg">
                           {service.title}
                         </h3>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-xs sm:text-sm text-[#5C4B3D] mb-4 sm:mb-6 flex-grow">
+                    <p className="mb-3 min-h-[44px] text-center text-[11px] leading-snug text-[#5C4B3D] sm:mb-6 sm:min-h-[48px] sm:text-left sm:text-sm sm:leading-normal">
                       {service.description}
                     </p>
 
                     {/* CTA Link */}
                     <a
                       href="#/services"
-                      className="inline-flex items-center text-gold-600 font-semibold text-xs sm:text-sm"
+                      className="mt-auto inline-flex items-center justify-center text-[11px] font-semibold text-gold-600 sm:justify-start sm:text-sm"
                     >
                       Learn More
                       <span className="ml-2">→</span>

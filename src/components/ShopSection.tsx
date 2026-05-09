@@ -34,7 +34,7 @@ const products = [
 
 export default function ShopSection() {
   return (
-    <section className="py-12 sm:py-24 relative bg-white border-y border-[#C99C3D]/10" id="shop\">
+    <section className="py-12 sm:py-24 relative bg-white border-y border-[#C99C3D]/10" id="shop">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-8 sm:mb-16 gap-4 sm:gap-6">
           <motion.div 
@@ -59,7 +59,7 @@ export default function ShopSection() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 auto-rows-max">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 auto-rows-max mobile-card-grid">
           {products.map((item, i) => (
             <motion.div
               key={i}
@@ -69,7 +69,7 @@ export default function ShopSection() {
               transition={{ delay: i * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-square rounded-[2rem] overflow-hidden mb-6 bg-[#FAF8F5] border border-[#C99C3D]/20">
+              <div className="relative aspect-square rounded-xl sm:rounded-[2rem] overflow-hidden mb-2 sm:mb-6 bg-[#FAF8F5] border border-[#C99C3D]/20">
                 <img 
                   src={item.image} 
                   alt={item.title} 
@@ -82,16 +82,16 @@ export default function ShopSection() {
                   </div>
                 )}
                 {/* Add to cart overlay button */}
-                <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <button className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gold-500 text-[#2C241B] flex flex-col items-center justify-center hover:bg-gold-400 shadow-lg">
+                <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 translate-y-0 opacity-100 sm:translate-y-12 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 transition-all duration-300">
+                  <button className="w-9 sm:w-12 h-9 sm:h-12 rounded-full bg-gold-500 text-[#2C241B] flex flex-col items-center justify-center hover:bg-gold-400 shadow-lg">
                     <ShoppingBag className="w-4 sm:w-5 h-4 sm:h-5" />
                   </button>
                 </div>
               </div>
-              <div>
-                <span className=\"text-[10px] sm:text-xs text-orange-600 uppercase tracking-widest block mb-1 sm:mb-2\">{item.category}</span>
-                <h4 className=\"text-sm sm:text-lg font-serif text-[#2C241B] mb-1 sm:mb-2 line-clamp-2\">{item.title}</h4>
-                <span className=\"text-gold-600 text-base sm:text-lg font-medium\">{item.price}</span>
+              <div className="min-w-0 text-center sm:text-left">
+                <span className="text-[9px] sm:text-xs text-orange-600 uppercase tracking-widest block mb-1 sm:mb-2 truncate">{item.category}</span>
+                <h4 className="text-xs sm:text-lg font-serif text-[#2C241B] mb-1 sm:mb-2 line-clamp-2 min-h-[2rem] sm:min-h-0 leading-snug">{item.title}</h4>
+                <span className="text-gold-600 text-sm sm:text-lg font-medium">{item.price}</span>
               </div>
             </motion.div>
           ))}

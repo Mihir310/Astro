@@ -41,7 +41,7 @@ export default function Blog() {
           </h3>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8 mobile-card-grid">
           {articles.map((article, i) => (
             <motion.div
               key={i}
@@ -51,7 +51,7 @@ export default function Blog() {
               transition={{ delay: i * 0.15 }}
               className="group cursor-pointer flex flex-col"
             >
-              <div className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-6">
+              <div className="relative aspect-[4/3] rounded-xl sm:rounded-3xl overflow-hidden mb-2 sm:mb-6">
                 <img 
                   src={article.image} 
                   alt={article.title}
@@ -62,15 +62,15 @@ export default function Blog() {
                   {article.category}
                 </div>
               </div>
-              <div className="flex items-center gap-3 sm:gap-4 text-[10px] sm:text-xs text-[#8C735D] uppercase tracking-widest mb-2 sm:mb-3">
+              <div className="flex items-center gap-2 sm:gap-4 text-[8px] sm:text-xs text-[#8C735D] uppercase tracking-widest mb-1.5 sm:mb-3">
                 <span className="truncate">{article.date}</span>
                 <span className="w-1 h-1 rounded-full bg-gray-700 flex-shrink-0"></span>
                 <span className="truncate">{article.readTime}</span>
               </div>
-              <h4 className="text-base sm:text-lg md:text-xl font-sans text-[#2C241B] leading-snug mb-3 sm:mb-4 group-hover:text-gold-600 transition-colors flex-grow">
+              <h4 className="text-xs sm:text-lg md:text-xl font-sans text-[#2C241B] leading-snug mb-2 sm:mb-4 group-hover:text-gold-600 transition-colors flex-grow line-clamp-3">
                 {article.title}
               </h4>
-              <div className="flex items-center text-xs sm:text-sm text-gold-500/80 font-medium tracking-wide group-hover:translate-x-2 transition-transform uppercase">
+              <div className="flex items-center text-[10px] sm:text-sm text-gold-500/80 font-medium tracking-wide group-hover:translate-x-2 transition-transform uppercase">
                 Read Article <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 ml-2" />
               </div>
             </motion.div>
