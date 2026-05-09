@@ -67,7 +67,7 @@ export default function ServicesSection() {
       <div className="absolute top-20 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-20 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -77,14 +77,14 @@ export default function ServicesSection() {
           className="text-center mb-20"
         >
           <p className="text-sm text-gold-600 uppercase tracking-[0.15em] font-semibold mb-4">Holistic Wellness</p>
-          <h2 className="text-5xl md:text-6xl font-sans font-bold text-charcoal-900 mb-6">Premium Services</h2>
-          <p className="text-lg text-[#5C4B3D] max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-sans font-bold text-charcoal-900 mb-6">Premium Services</h2>
+          <p className="text-sm sm:text-lg text-[#5C4B3D] max-w-2xl mx-auto">
             Explore our comprehensive range of spiritual and healing services, each designed to guide you toward greater clarity, wellness, and transformation.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -98,31 +98,31 @@ export default function ServicesSection() {
                 className="group relative"
               >
                 {/* Glassmorphism Card */}
-                <div className="relative h-full bg-white/40 backdrop-blur-xl border border-white/60 rounded-2xl p-8 overflow-hidden transition-all duration-300 shadow-lg">
+                <div className="relative h-full bg-white/40 backdrop-blur-xl border border-white/60 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden transition-all duration-300 shadow-lg">
                   {/* Color Background */}
                   <div className={`absolute inset-0 ${service.color} opacity-0`} />
 
                   {/* Content */}
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Button with Icon and Title */}
-                    <div className="mb-6 relative inline-block">
-                      <div className="flex items-center gap-3 px-6 py-4 bg-white rounded-full shadow-lg">
-                        <Icon className="w-6 h-6 text-black flex-shrink-0" />
-                        <h3 className="text-lg font-sans text-black whitespace-nowrap">
+                    <div className="mb-4 sm:mb-6 relative inline-block">
+                      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-4 bg-white rounded-full shadow-lg">
+                        <Icon className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-black flex-shrink-0" />
+                        <h3 className="text-xs sm:text-base md:text-lg font-sans text-black whitespace-nowrap">
                           {service.title}
                         </h3>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm text-[#5C4B3D] mb-6 flex-grow">
+                    <p className="text-xs sm:text-sm text-[#5C4B3D] mb-4 sm:mb-6 flex-grow">
                       {service.description}
                     </p>
 
                     {/* CTA Link */}
                     <a
                       href="#/services"
-                      className="inline-flex items-center text-gold-600 font-semibold text-sm"
+                      className="inline-flex items-center text-gold-600 font-semibold text-xs sm:text-sm"
                     >
                       Learn More
                       <span className="ml-2">→</span>

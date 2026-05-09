@@ -45,10 +45,10 @@ const zodiacProducts = [
 
 export default function Features() {
   return (
-    <section className="py-24 relative bg-[#FAF8F5] border-y border-[#C99C3D]/10" id="zodiac">
-      <div className="max-w-[1400px] mx-auto px-6">
-        <div className="text-center mb-12">
-           <h2 className="text-3xl md:text-4xl font-sans text-[#2C241B]">
+    <section className="py-12 sm:py-24 relative bg-[#FAF8F5] border-y border-[#C99C3D]/10" id="zodiac\">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6\">
+        <div className=\"text-center mb-8 sm:mb-12\">
+           <h2 className=\"text-xl sm:text-3xl md:text-4xl font-sans text-[#2C241B]\">
              Shop by Zodiac — <span className="italic text-[#5C4B3D]">What the universe recommends.</span>
            </h2>
         </div>

@@ -349,7 +349,7 @@ export default function Services() {
           </motion.div>
 
           {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
             {filteredServices.map((service, index) => {
               const IconComponent = getServiceIcon(service.id);
               

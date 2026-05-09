@@ -104,28 +104,28 @@ export default function ProductCategoryPage({
 
   return (
     <>
-      <section className="pt-36 pb-14 bg-[#FAF8F5] border-b border-[#C99C3D]/10">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-20 sm:pt-36 pb-8 sm:pb-14 bg-[#FAF8F5] border-b border-[#C99C3D]/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {showBackLink && (
             <a href="#/shop" className="inline-flex items-center gap-2 text-sm text-gold-600 hover:text-gold-500 font-medium uppercase tracking-widest mb-8">
               <ArrowLeft className="w-4 h-4" />
               Back to shop
             </a>
           )}
-          <p className="text-sm text-gold-600 uppercase tracking-[0.24em] mb-4">
+          <p className="text-xs sm:text-sm text-gold-600 uppercase tracking-[0.24em] mb-2 sm:mb-4">
             {category ? 'Product Category' : 'Shop'}
           </p>
-          <h1 className="text-5xl md:text-7xl font-serif text-[#2C241B] leading-tight max-w-4xl">
+          <h1 className="text-2xl sm:text-5xl md:text-7xl font-serif text-[#2C241B] leading-tight max-w-4xl">
             {pageTitle}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-[#5C4B3D] font-light leading-relaxed">
+          <p className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-lg text-[#5C4B3D] font-light leading-relaxed">
             {pageDescription}
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6">
+      <section className="py-10 sm:py-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-5 mb-8">
             <div>
               <p className="text-sm text-[#8C735D] uppercase tracking-widest">
@@ -246,7 +246,7 @@ export default function ProductCategoryPage({
           </div>
 
           {visibleProducts.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
               {visibleProducts.map((product, index) => (
                 <motion.article
                   key={`${product.name}-${index}`}

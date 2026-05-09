@@ -34,17 +34,17 @@ const products = [
 
 export default function ShopSection() {
   return (
-    <section className="py-24 relative bg-white border-y border-[#C99C3D]/10" id="shop">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+    <section className="py-12 sm:py-24 relative bg-white border-y border-[#C99C3D]/10" id="shop\">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-8 sm:mb-16 gap-4 sm:gap-6">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="max-w-xl"
           >
-            <h2 className="text-sm text-gold-600 uppercase tracking-[0.2em] mb-4">Sacred Treasures</h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-[#2C241B] leading-tight">
+            <h2 className="text-xs sm:text-sm text-gold-600 uppercase tracking-[0.2em] mb-2 sm:mb-4">Sacred Treasures</h2>
+            <h3 className="text-2xl sm:text-4xl md:text-5xl font-serif text-[#2C241B] leading-tight">
               Curated <span className="italic text-[#8C735D]">Spiritual Tools</span>
             </h3>
           </motion.div>
@@ -53,13 +53,13 @@ export default function ShopSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <a href="#/shop" className="px-6 py-3 border border-[#C99C3D]/30 hover:border-gold-500 text-[#2C241B] hover:text-gold-600 font-medium rounded-full transition-all text-sm uppercase tracking-wider flex items-center">
+            <a href="#/shop" className="px-4 sm:px-6 py-2 sm:py-3 border border-[#C99C3D]/30 hover:border-gold-500 text-[#2C241B] hover:text-gold-600 font-medium rounded-full transition-all text-xs sm:text-sm uppercase tracking-wider flex items-center whitespace-nowrap">
               View All Products
             </a>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 auto-rows-max">
           {products.map((item, i) => (
             <motion.div
               key={i}
@@ -77,21 +77,21 @@ export default function ShopSection() {
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" 
                 />
                 {item.tag && (
-                  <div className="absolute top-4 left-4 bg-[#FAF8F5]/80 backdrop-blur-md border border-[#C99C3D]/20 px-3 py-1 rounded-full text-[10px] uppercase tracking-widest text-gold-600">
+                  <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-[#FAF8F5]/80 backdrop-blur-md border border-[#C99C3D]/20 px-2 sm:px-3 py-1 rounded-full text-[8px] sm:text-[10px] uppercase tracking-widest text-gold-600">
                     {item.tag}
                   </div>
                 )}
                 {/* Add to cart overlay button */}
-                <div className="absolute bottom-4 right-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <button className="w-12 h-12 rounded-full bg-gold-500 text-[#2C241B] flex flex-col items-center justify-center hover:bg-gold-400 shadow-lg">
-                    <ShoppingBag className="w-5 h-5" />
+                <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <button className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gold-500 text-[#2C241B] flex flex-col items-center justify-center hover:bg-gold-400 shadow-lg">
+                    <ShoppingBag className="w-4 sm:w-5 h-4 sm:h-5" />
                   </button>
                 </div>
               </div>
               <div>
-                <span className="text-xs text-orange-600 uppercase tracking-widest block mb-2">{item.category}</span>
-                <h4 className="text-lg font-serif text-[#2C241B] mb-2">{item.title}</h4>
-                <span className="text-gold-600 text-lg font-medium">{item.price}</span>
+                <span className=\"text-[10px] sm:text-xs text-orange-600 uppercase tracking-widest block mb-1 sm:mb-2\">{item.category}</span>
+                <h4 className=\"text-sm sm:text-lg font-serif text-[#2C241B] mb-1 sm:mb-2 line-clamp-2\">{item.title}</h4>
+                <span className=\"text-gold-600 text-base sm:text-lg font-medium\">{item.price}</span>
               </div>
             </motion.div>
           ))}

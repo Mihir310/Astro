@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
