@@ -59,7 +59,7 @@ export default function ShopSection() {
           </motion.div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((item, i) => (
             <motion.div
               key={i}
